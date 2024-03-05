@@ -6,7 +6,7 @@ export default function Header() {
       <nav className="container mx-auto flex items-center justify-between py-4">
         <Image
           src="/logo-proonco-clara.png"
-          width={180}
+          width={150}
           height={20}
           alt="Logo ProOnco"
         />
