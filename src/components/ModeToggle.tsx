@@ -21,7 +21,7 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog";
 
-export function ModeToggle({ mobile }) {
+export function ModeToggle({ mobile }: any) {
     const { setTheme } = useTheme();
 
     return (
