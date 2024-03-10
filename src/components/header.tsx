@@ -4,7 +4,7 @@ import NavbarMobile from "../components/NavbarMobile";
 
 export default function Header() {
     return (
-        <header className=" bg-sky-500 text-sky-100 text-base">
+        <header className="w-full absolute z-[1000] top-0 bg-sky-500 text-sky-100 text-base">
             <nav className="container mx-auto flex items-center justify-between py-4">
                 <Image
                     src="/logo-proonco-clara.png"
@@ -22,8 +22,10 @@ export default function Header() {
                         <a href="#sobre">Sobre</a>
                     </li>
                 </ul> */}
-                <ModeToggle mobile={true} />
-                <NavbarMobile />
+                <div className="relative flex items-center">
+                    <ModeToggle />
+                    <NavbarMobile />
+                </div>
             </nav>
         </header>
     );

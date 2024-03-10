@@ -6,18 +6,15 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
-import { ModeToggle } from "./ModeToggle";
 
 function NavbarMobile() {
     return (
         <Sheet>
             <SheetTrigger>Abrir</SheetTrigger>
-            <SheetContent>
-                <SheetHeader className="-mt-[6px]">
-                    <ModeToggle mobile={true} />
-                </SheetHeader>
-                <SheetDescription className="mt-8">
-                    <div className="w-full text-start">Início</div>
+            <SheetContent className="w-full bg-accent absolute">
+                <SheetHeader className="mt-16"></SheetHeader>
+                <SheetDescription className="mt-2">
+                    <div className="w-full text-start text-lg">Início</div>
                 </SheetDescription>
             </SheetContent>
         </Sheet>
