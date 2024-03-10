@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ModeToggle } from "./ModeToggle";
-import NavbarMobile from "../components/navbarMobile";
+import NavbarMobile from "../components/NavbarMobile";
 
 export default function Header() {
     return (
