@@ -11,7 +11,7 @@ import { ModeToggle } from "./ModeToggle";
 function NavbarMobile() {
     return (
         <Sheet>
-            <SheetTrigger>Open</SheetTrigger>
+            <SheetTrigger>Abrir</SheetTrigger>
             <SheetContent>
                 <SheetHeader className="-mt-[6px]">
                     <ModeToggle mobile={true} />
