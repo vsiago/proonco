@@ -26,7 +26,7 @@ export default function Header() {
         },
         {
             nome: "Contatos",
-            link: "/contato"
+            link: "/contatos"
         }
     ]
 
