@@ -32,7 +32,7 @@ export default function Header() {
 
 
     return (
-        <header className="bg-accent h-16 px-6 flex justify-between items-center ">
+        <header className="bg-accent min-h-16 px-6 flex justify-between items-center ">
 
             <Image
                 src="/logo-proonco-clara.png"
