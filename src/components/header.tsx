@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { ModeToggle } from "./ModeToggle";
+// import { ModeToggle } from "./ModeToggle";
 
 export default function Header() {
     const [open, setOpen] = useState(false);
@@ -38,7 +38,7 @@ export default function Header() {
                             <a className="inline-block text-slate-300 py-6 border-b-[1px] border-slate-700 w-full" href={`${item}`}>{item}</a>
                         </li>
                     ))}
-                    <ModeToggle />
+                    {/* <ModeToggle /> */}
                 </ul>
             </nav>
         </header>

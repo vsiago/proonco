@@ -21,7 +21,7 @@ export default function RootLayout({
             <body style={{ overflowX: "hidden" }} className={cn("font-sans", inter.className)}>
                 <ThemeProvider
                     attribute="class"
-                    defaultTheme="system"
+                    defaultTheme="dark"
                     enableSystem
                     disableTransitionOnChange
                 >
