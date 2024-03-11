@@ -3,13 +3,36 @@ import { useState } from "react";
 import Image from "next/image";
 // import { ModeToggle } from "./ModeToggle";
 
+
 export default function Header() {
     const [open, setOpen] = useState(false);
 
-    const menuItems = ["Home", "About", "Services", "Contact"];
+    const menuItems = [
+        {
+            nome: "Início",
+            link: "/"
+        },
+        {
+            nome: "Quem Somos",
+            link: "/quem-somos"
+        },
+        {
+            nome: "Oncologia em Números",
+            link: "/oncologia-em-numeros"
+        },
+        {
+            nome: "Serviços",
+            link: "/servicos"
+        },
+        {
+            nome: "Contatos",
+            link: "/contato"
+        }
+    ]
+
 
     return (
-        <header className="bg-accent h-16 px-5 flex justify-between items-center ">
+        <header className="bg-accent h-16 px-6 flex justify-between items-center ">
 
             <Image
                 src="/logo-proonco-clara.png"
@@ -32,10 +55,10 @@ export default function Header() {
                     className={`${open ? "bg-accent flex opacity-100 w-full left-0" : " w-0 "} absolute top-16  right-0 flex flex-col transition duration-200 ease-out opacity-0 h-full`}
                 >
                     {menuItems.map((item) => (
-                        <li className="px-5"
-                            key={item}
+                        <li className="px-6"
+                            key={item.nome}
                         >
-                            <a className="inline-block text-slate-300 py-6 border-b-[1px] border-slate-700 w-full" href={`${item}`}>{item}</a>
+                            <a className="inline-block text-slate-300 py-6 border-b-[1px] border-slate-700 w-full" href={`${item.link}`}>{item.nome}</a>
                         </li>
                     ))}
                     {/* <ModeToggle /> */}

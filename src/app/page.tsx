@@ -1,16 +1,14 @@
-import Header from "../components/header";
+import Header from "../components/Header";
+import Footer from '@/components/Footer'
 
 export default function Home() {
     return (
-        <div className="overflow-hidden">
+        <main className='min-h-screen flex flex-col'>
             <Header />
-            <main className="bg-accent min-h-screen flex items-center justify-center text-center">
-                <h1 className="text-xl">
-                    ProOnco Site,
-                    <br />
-                    no ar! 🔥
-                </h1>
-            </main>
-        </ div>
+            <section className='flex-1 bg-accent flex items-center justify-center'>
+                <h1 className='text-xl'>Inicio</h1>
+            </section>
+            <Footer />
+        </main>
     );
 }
