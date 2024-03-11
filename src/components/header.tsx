@@ -9,7 +9,7 @@ export default function Header() {
     const menuItems = ["Home", "About", "Services", "Contact"];
 
     return (
-        <header className="bg-slate-800 h-16 px-5 flex justify-between items-center">
+        <header className="bg-accent h-16 px-5 flex justify-between items-center ">
 
             <Image
                 src="/logo-proonco-clara.png"
@@ -29,16 +29,17 @@ export default function Header() {
                     ></li>
                 </ul>
                 <ul
-                    className={`${open ? "flex opacity-100 w-full transform translate-x-0" : "opacity-0 w-0 transform translate-x-[100%]"} absolute top-16 flex-1 right-0 flex flex-col transition duration-300 ease-out opacity-0 h-full bg-black/60`}
+                    className={`${open ? "bg-accent flex opacity-100 w-full transform translate-x-0" : " w-0 transform translate-x-full"} absolute top-16  right-0 flex flex-col transition duration-150 ease-out opacity-0 h-full`}
                 >
                     {menuItems.map((item) => (
                         <li
-                            className="odd:bg-slate-700/50 even:bg-slate-700/40 px-5 py-2 transition duration-500 ease-in hover:transform"
+                            className={`${open ? 'block' : 'hidden'} px-5 py-4`}
                             key={item}
                         >
                             <a href={`${item}`}>{item}</a>
                         </li>
                     ))}
+                    <ModeToggle />
                 </ul>
             </nav>
         </header>

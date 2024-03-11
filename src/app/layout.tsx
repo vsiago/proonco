@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="pt-BR">
-            <body className={cn("min-h-screen font-sans", inter.className)}>
+            <body style={{ overflowX: "hidden" }} className={cn("font-sans", inter.className)}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="system"
