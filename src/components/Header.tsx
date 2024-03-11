@@ -52,13 +52,13 @@ export default function Header() {
                     ></li>
                 </ul>
                 <ul
-                    className={`${open ? "bg-accent flex opacity-100 w-full left-0" : " w-0 "} absolute top-16  right-0 flex flex-col transition duration-200 ease-out opacity-0 h-full`}
+                    className={`${open ? "bg-accent flex opacity-100 w-full left-0" : "w-full"} absolute top-16  right-0 flex flex-col transition duration-200 ease-out opacity-0 h-full`}
                 >
                     {menuItems.map((item) => (
                         <li className="px-6"
                             key={item.nome}
                         >
-                            <a className="inline-block text-slate-300 py-6 border-b-[1px] border-slate-700 w-full" href={`${item.link}`}>{item.nome}</a>
+                            <a className={`${open ? 'inline-block' : 'hidden opacity-0'} text-slate-300 py-6 border-b-[1px] border-slate-700 w-full`} href={`${item.link}`}>{item.nome}</a>
                         </li>
                     ))}
                     {/* <ModeToggle /> */}
