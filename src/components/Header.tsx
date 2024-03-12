@@ -1,8 +1,6 @@
-"use client";
+"use client"
 import { useState } from "react";
 import Image from "next/image";
-// import { ModeToggle } from "./ModeToggle";
-
 
 export default function Header() {
     const [open, setOpen] = useState(false);
@@ -28,18 +26,17 @@ export default function Header() {
             nome: "Contatos",
             link: "/contatos"
         }
-    ]
-
+    ];
 
     return (
         <header className="bg-accent">
-
             <nav className="min-h-16 px-6 flex justify-between items-center md:container mx-auto">
                 <Image
                     src="/logo-proonco-clara.png"
                     width={150}
                     height={20}
-                    alt="Logo ProOnco" />
+                    alt="Logo ProOnco"
+                />
                 <ul
                     onClick={() => setOpen(!open)}
                     className="relative flex h-10 w-10 flex-col items-center justify-center gap-2 cursor-pointer hover:bg-slate-700 rounded transition duration-150 ease-in hover:transform hover:scale-105"
@@ -52,16 +49,22 @@ export default function Header() {
                     ></li>
                 </ul>
                 <ul
-                    className={`${open ? "bg-accent flex opacity-100 w-full h-[calc(100%-4rem)] left-0" : "w-full h-0"} absolute top-16  right-0 flex flex-col transition duration-200 ease-out opacity-0 flex-1`}
+                    className={`${open ? "bg-accent flex opacity-100 w-full h-[calc(100%-4rem)] left-0" : "w-full h-0"} absolute top-16 right-0 flex flex-col transition duration-200 ease-out opacity-0 flex-1`}
                 >
-                    {menuItems.map((item) => (
-                        <li className="px-6"
+                    {menuItems.map((item, index) => (
+                        <li
                             key={item.nome}
+                            style={{ transitionDelay: `${open ? index * 50 : 0}ms` }}
+                            className={`px-6 ${open ? 'transition ease-in delay-[50ms] opacity-100 transform translate-x-0' : 'opacity-0 transform -translate-x-10'}`}
                         >
-                            <a className={`${open ? 'inline-block ml-0 pointer-events-auto' : 'opacity-0 ml-6 hidden pointer-events-none'} text-slate-300 py-6 border-b-[1px] border-slate-700 w-full`} href={`${item.link}`}>{item.nome}</a>
+                            <a
+                                className={`${open ? 'inline-block ml-0 pointer-events-auto' : 'opacity-0 ml-6 hidden pointer-events-none'} text-slate-300 py-6 border-b-[1px] border-slate-700 w-full focus:text-white focus:font-semibold`}
+                                href={`${item.link}`}
+                            >
+                                {item.nome}
+                            </a>
                         </li>
                     ))}
-                    {/* <ModeToggle /> */}
                 </ul>
             </nav>
         </header>
