@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
     title: "ProOnco - Inicio",
     description: "Transormando cuidado em cura.",
+    themeColor: "red"
 };
 
 export default function Home() {
