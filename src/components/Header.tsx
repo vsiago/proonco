@@ -56,11 +56,11 @@ export default function Header() {
                     {menuItems.map((item, index) => (
                         <li
                             key={item.nome}
-                            style={{ transitionDelay: `${open ? index * 50 : 0}ms` }}
-                            className={`px-6 ${open ? 'transition ease-in delay-[50ms] opacity-100 transform translate-x-0' : 'opacity-0 transform -translate-x-10'}`}
+                            style={{ transitionDelay: `${open ? index * 100 : 0}ms` }}
+                            className={`px-6 ${open ? 'opacity-100 transform translate-x-0 ' : 'opacity-0 transform -translate-x-10'} transition-all ease-out duration-500`}
                         >
                             <a
-                                className={`${open ? 'inline-block ml-0 pointer-events-auto' : 'opacity-0 ml-6 hidden pointer-events-none'} text-slate-300 py-6 border-b-[1px] border-slate-700 w-full focus:text-white focus:font-semibold`}
+                                className={`${open ? 'inline-block ml-0 pointer-events-auto transition ease-in py-6' : 'py-0 opacity-0 ml-6 hidden pointer-events-none'} text-slate-300 border-b-[1px] border-slate-700 w-full focus:text-white focus:font-semibold`}
                                 href={`${item.link}`}
                             >
                                 {item.nome}
