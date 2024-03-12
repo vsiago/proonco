@@ -8,7 +8,7 @@ function QuemSomos() {
   return (
     <main className='min-h-screen flex flex-col'>
       <Header />
-      <IntroPage Title="Quem Somo" />
+      <IntroPage Title="Quem Somos" />
       <Footer />
     </main>
   )
