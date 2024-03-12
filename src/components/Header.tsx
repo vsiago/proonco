@@ -31,12 +31,14 @@ export default function Header() {
     return (
         <header className="bg-accent">
             <nav className="min-h-16 px-6 flex justify-between items-center md:container mx-auto">
-                <Image
-                    src="/logo-proonco-clara.png"
-                    width={150}
-                    height={20}
-                    alt="Logo ProOnco"
-                />
+                <a href="/">
+                    <Image
+                        src="/logo-proonco-clara.png"
+                        width={150}
+                        height={20}
+                        alt="Logo ProOnco"
+                    />
+                </a>
                 <ul
                     onClick={() => setOpen(!open)}
                     className="relative flex h-10 w-10 flex-col items-center justify-center gap-2 cursor-pointer hover:bg-slate-700 rounded transition duration-150 ease-in hover:transform hover:scale-105"
