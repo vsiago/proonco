@@ -52,7 +52,7 @@ export default function Header() {
                     ></li>
                 </ul>
                 <ul
-                    className={`${open ? "bg-accent flex opacity-100 w-full left-0" : "w-full"} absolute top-16  right-0 flex flex-col transition duration-200 ease-out opacity-0`}
+                    className={`${open ? "bg-accent flex opacity-100 w-full h-full left-0" : "w-full h-0"} absolute top-16  right-0 flex flex-col transition duration-200 ease-out opacity-0 flex-1`}
                 >
                     {menuItems.map((item) => (
                         <li className="px-6"
