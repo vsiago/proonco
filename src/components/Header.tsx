@@ -32,14 +32,14 @@ export default function Header() {
 
 
     return (
-        <header className="bg-accent min-h-16 px-6 flex justify-between items-center ">
+        <header className="bg-accent">
 
-            <Image
-                src="/logo-proonco-clara.png"
-                width={150}
-                height={20}
-                alt="Logo ProOnco" />
-            <nav className="">
+            <nav className="min-h-16 px-6 flex justify-between items-center md:container mx-auto">
+                <Image
+                    src="/logo-proonco-clara.png"
+                    width={150}
+                    height={20}
+                    alt="Logo ProOnco" />
                 <ul
                     onClick={() => setOpen(!open)}
                     className="relative flex h-10 w-10 flex-col items-center justify-center gap-2 cursor-pointer hover:bg-slate-700 rounded transition duration-150 ease-in hover:transform hover:scale-105"
@@ -52,13 +52,13 @@ export default function Header() {
                     ></li>
                 </ul>
                 <ul
-                    className={`${open ? "bg-accent flex opacity-100 w-full h-full left-0" : "w-full h-0"} absolute top-16  right-0 flex flex-col transition duration-200 ease-out opacity-0 flex-1`}
+                    className={`${open ? "bg-accent flex opacity-100 w-full h-[calc(100%-4rem)] left-0" : "w-full h-0"} absolute top-16  right-0 flex flex-col transition duration-200 ease-out opacity-0 flex-1`}
                 >
                     {menuItems.map((item) => (
                         <li className="px-6"
                             key={item.nome}
                         >
-                            <a className={`${open ? 'inline-block' : 'hidden opacity-0'} text-slate-300 py-6 border-b-[1px] border-slate-700 w-full`} href={`${item.link}`}>{item.nome}</a>
+                            <a className={`${open ? 'inline-block ml-0 pointer-events-auto' : 'opacity-0 ml-6 hidden pointer-events-none'} text-slate-300 py-6 border-b-[1px] border-slate-700 w-full`} href={`${item.link}`}>{item.nome}</a>
                         </li>
                     ))}
                     {/* <ModeToggle /> */}
