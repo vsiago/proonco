@@ -7,12 +7,12 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
-      display: ['Ubuntu', 'sans-serif'],
+      display: ['Vibur', 'sans-serif'],
     },
     container: {
       center: true,
@@ -78,7 +78,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require('@tailwindcss/line-clamp')],
 } satisfies Config
 
 export default config

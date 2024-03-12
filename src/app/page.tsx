@@ -13,7 +13,7 @@ export default function Home() {
         <main className='min-h-screen flex flex-col'>
             <Header />
             <section className='flex-1 bg-accent flex items-center justify-center'>
-                <h1 className='text-xl'>Inicio</h1>
+                {/* <h1 className='text-4xl font-display font-black line-clamp-3'>Excelência em Gestão Hospitalar Oncológica</h1> */}
             </section>
             <Footer />
         </main>
