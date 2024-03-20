@@ -13,6 +13,7 @@ const config = {
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
       display: ['Vibur', 'sans-serif'],
+      'libre': ['Libre Baskerville', 'serif'],
     },
     container: {
       center: true,
