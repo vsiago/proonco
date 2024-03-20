@@ -40,7 +40,7 @@ export default function Contato() {
   return (
     <main className='min-h-screen flex flex-col'>
       <Header />
-      <section className='flex-1 bg-accent flex items-center justify-center'>
+      <section className='flex-1 bg-accent flex items-center justify-center py-20'>
         <div className="container mx-auto text-center">
           <h1 className='text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-libre break-words'>Entre em Contato</h1>
           <p className="mt-4 text-lg">Estamos aqui para ajudar. Preencha o formulário abaixo e entraremos em contato em breve.</p>

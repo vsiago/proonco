@@ -12,14 +12,14 @@ export default function Home() {
     return (
         <main className='min-h-screen flex flex-col'>
             <Header />
-            <section className='flex-1 bg-accent flex items-center justify-center'>
+            <section className='flex-1 bg-accent flex items-center justify-center py-20'>
                 <div className="container mx-auto text-center">
                     <div className="h-full my-20">
                         <h1 className='text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-libre break-words'>Oncologia: Promovendo Gestão Hospitalar Especializada</h1>
                     </div>
                     <div className="mt-8 my-10">
                         <h2 className="text-2xl font-bold mb-4">Serviços</h2>
-                        <ul className="text-left flex flex-col gap-7">
+                        <ul className="text-left gap-7 grid md:grid-cols-2">
                             <li className="mb-4">
                                 <h3 className="text-lg font-semibold">1. Consultoria Especializada em Oncologia</h3>
                                 <p>Oferecemos consultoria especializada em oncologia para otimizar processos hospitalares, melhorar a qualidade do atendimento e garantir protocolos eficazes de tratamento.</p>

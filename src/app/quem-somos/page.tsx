@@ -12,9 +12,9 @@ export default function QuemSomos() {
   return (
     <main className='min-h-screen flex flex-col'>
       <Header />
-      <section className='flex-1 bg-accent flex items-center justify-center'>
+      <section className='flex-1 bg-accent flex items-center justify-center py-20'>
         <div className="container mx-auto text-center">
-          <h1 className='text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-libre break-words my-20'>Quem Somos</h1>
+          <h1 className='text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-libre break-words'>Quem Somos</h1>
           <p className="mt-8 my-10 text-lg leading-relaxed">
             A ProOnco é uma empresa dedicada à promoção da excelência na gestão hospitalar em oncologia.
             Nossa missão é fornecer soluções especializadas e inovadoras que auxiliem instituições de saúde a oferecerem os melhores cuidados aos pacientes oncológicos.
