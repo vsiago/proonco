@@ -57,7 +57,7 @@ export default function Header() {
                     {menuItems.map((item, index) => (
                         <li
                             key={item.nome}
-                            style={{ transitionDelay: `${open ? index * 100 : 0}ms` }}
+                            style={{ transitionDelay: `${open ? index * 70 : 0}ms` }}
                             className={`px-6 ${open ? 'opacity-100 transform translate-x-0 ' : 'opacity-0 transform -translate-x-10'} transition-all ease-out duration-500`}
                         >
                             <a
