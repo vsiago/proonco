@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
     const [open, setOpen] = useState(false);
@@ -41,7 +42,7 @@ export default function Header() {
                 </a>
                 <ul
                     onClick={() => setOpen(!open)}
-                    className="relative flex h-10 w-10 flex-col items-center justify-center gap-2 cursor-pointer hover:bg-slate-700 rounded transition duration-150 ease-in hover:transform hover:scale-105"
+                    className="md:hidden relative flex h-10 w-10 flex-col items-center justify-center gap-2 cursor-pointer hover:bg-slate-700 rounded transition duration-150 ease-in hover:transform hover:scale-105"
                 >
                     <li
                         className={`${open ? "transform rotate-45 absolute" : ""} w-6 h-[2px] rounded-[2px] bg-white transition duration-150 ease-in-out`}
@@ -68,6 +69,11 @@ export default function Header() {
                         </li>
                     ))}
                 </ul>
+                <ul className="hidden md:flex gap-3">{menuItems.map((item, intex) => (
+                    <li key={item.nome}>
+                        <Link className="px-2 py-1" href={item.link}>{item.nome}</Link>
+                    </li>
+                ))}</ul>
             </nav>
         </header>
     );
