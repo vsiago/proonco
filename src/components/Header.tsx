@@ -1,10 +1,12 @@
 "use client"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Header() {
     const [open, setOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
 
     const menuItems = [
         {
@@ -29,9 +31,32 @@ export default function Header() {
         }
     ];
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            const isScrolled = currentScrollPos > 0;
+
+            setScrolled(isScrolled);
+
+            if (currentScrollPos > prevScrollPos) {
+                // Scrolling down
+                setPrevScrollPos(currentScrollPos);
+                setOpen(false);
+            } else {
+                // Scrolling up
+                setPrevScrollPos(currentScrollPos);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [prevScrollPos]);
+
     return (
-        <header className="bg-accent">
-            <nav className="min-h-16 px-6 flex justify-between items-center md:container mx-auto">
+        <header className={`${scrolled ? "bg-sky-500 fixed top-0 z-10 h-16 flex w-full translate-y-0 duration-300 ease-in-out bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-90" : "h-24 bg-accent"} `}>
+            <nav className="min-h-full px-6 flex w-full justify-between items-center md:container mx-auto ">
                 <a href="/">
                     <Image
                         src="/logo-proonco-clara.png"
@@ -42,17 +67,17 @@ export default function Header() {
                 </a>
                 <ul
                     onClick={() => setOpen(!open)}
-                    className="md:hidden relative flex h-10 w-10 flex-col items-center justify-center gap-2 cursor-pointer hover:bg-slate-700 rounded transition duration-150 ease-in hover:transform hover:scale-105"
+                    className="md:hidden relative flex h-10 w-10 flex-col items-center justify-center gap-3 cursor-pointer hover:bg-slate-700 rounded transition duration-150 ease-in hover:transform hover:scale-105"
                 >
                     <li
-                        className={`${open ? "transform rotate-45 absolute" : ""} w-6 h-[2px] rounded-[2px] bg-white transition duration-150 ease-in-out`}
+                        className={`${open ? "transform rotate-45 absolute" : ""} w-7 h-[3px] rounded-[2px] bg-white transition duration-150 ease-in-out`}
                     ></li>
                     <li
-                        className={`${open ? "transform -rotate-45 absolute" : ""} w-6 h-[2px] rounded-[2px] bg-white transition duration ease-in-out`}
+                        className={`${open ? "transform -rotate-45 absolute" : ""} w-7 h-[3px] rounded-[2px] bg-white transition duration ease-in-out`}
                     ></li>
                 </ul>
                 <ul
-                    className={`${open ? "bg-accent flex opacity-100 w-full h-[calc(100%-4rem)] left-0" : "w-full h-0"} absolute top-16 right-0 flex flex-col transition duration-200 ease-out opacity-0 flex-1`}
+                    className={`${open ? "bg-accent flex opacity-100 w-full h-screen left-0" : "w-full h-0"} fixed ${scrolled ? "top-16" : "top-20"} right-0 flex flex-col transition duration-200 ease-out opacity-0 flex-1`}
                 >
                     {menuItems.map((item, index) => (
                         <li
