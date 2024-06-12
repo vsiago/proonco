@@ -1,19 +1,20 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{jsx,ts,tsx}",
+    "./components/**/*.{jsx,ts,tsx}",
+    "./app/**/*.{jsx,ts,tsx}",
+    "./src/**/*.{jsx,ts,tsx}",
   ],
   prefix: "",
   theme: {
     fontFamily: {
-      sans: ['Inter', 'sans-serif'],
-      display: ['Vibur', 'sans-serif'],
-      'libre': ['Libre Baskerville', 'serif'],
+      sans: ["Inter", "sans-serif"],
+      display: ["Vibur", "sans-serif"],
+      libre: ["Libre Baskerville", "serif"],
+      "bai-jamjuree": ["Bai Jamjuree", "sans-serif"],
     },
     container: {
       center: true,
@@ -79,7 +80,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require('@tailwindcss/line-clamp')],
-} satisfies Config
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/line-clamp")],
+} satisfies Config;
 
-export default config
+export default config;

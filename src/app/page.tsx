@@ -1,75 +1,50 @@
-import type { Metadata } from "next";
+import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "@/components/Footer";
 
-export const metadata: Metadata = {
-    title: "ProOnco - Início",
-    description: "Transformando cuidado em cura.",
-    themeColor: "red"
-};
-
 export default function Home() {
-    return (
-        <main className='min-h-screen flex flex-col'>
-            <Header />
-            <section className='flex-1 bg-accent flex items-center justify-center py-20'>
-                <div className="container mx-auto text-center">
-                    <div className="h-full my-20">
-                        <h1 className='text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-libre break-words'>Oncologia: Promovendo Gestão Hospitalar Especializada</h1>
-                    </div>
-                    <div className="mt-8 my-10">
-                        <h2 className="text-2xl font-bold mb-4">Serviços</h2>
-                        <ul className="text-left gap-7 grid md:grid-cols-2">
-                            <li className="mb-4">
-                                <h3 className="text-lg font-semibold">1. Consultoria Especializada em Oncologia</h3>
-                                <p>Oferecemos consultoria especializada em oncologia para otimizar processos hospitalares, melhorar a qualidade do atendimento e garantir protocolos eficazes de tratamento.</p>
-                            </li>
-                            <li className="mb-4">
-                                <h3 className="text-lg font-semibold">2. Gestão de Recursos Humanos</h3>
-                                <p>Auxiliamos na seleção, treinamento e capacitação de profissionais de saúde especializados em oncologia, garantindo uma equipe qualificada e motivada para lidar com os desafios específicos dessa área.</p>
-                            </li>
-                            <li className="mb-4">
-                                <h3 className="text-lg font-semibold">3. Tecnologia e Inovação</h3>
-                                <p>Implementamos soluções tecnológicas avançadas para gestão hospitalar em oncologia, incluindo sistemas de informação, telemedicina, e ferramentas de análise de dados para promover uma abordagem baseada em evidências.</p>
-                            </li>
-                            <li className="mb-4">
-                                <h3 className="text-lg font-semibold">4. Gestão Financeira e Administrativa</h3>
-                                <p>Oferecemos serviços de gestão financeira e administrativa personalizados para hospitais oncológicos, visando a otimização de recursos, redução de custos e maximização da eficiência operacional.</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="mt-8 my-10">
-                        <h2 className="text-2xl font-bold mb-4">Benefícios da Parceria com a Pronco Gestão Hospitalar</h2>
-                        <ul className="text-left">
-                            <li className="mb-4">
-                                <h3 className="text-lg font-semibold">Expertise Especializada</h3>
-                                <p>Conte com uma equipe de profissionais experientes e especializados em gestão hospitalar e oncologia.</p>
-                            </li>
-                            <li className="mb-4">
-                                <h3 className="text-lg font-semibold">Abordagem Holística</h3>
-                                <p>Desenvolvemos estratégias personalizadas que abrangem todos os aspectos da gestão hospitalar em oncologia, desde a logística até a qualidade do atendimento ao paciente.</p>
-                            </li>
-                            <li className="mb-4">
-                                <h3 className="text-lg font-semibold">Resultados Comprovados</h3>
-                                <p>Nossas soluções são baseadas em evidências e resultados tangíveis, comprovados por meio de parcerias bem-sucedidas com hospitais e instituições de saúde em todo o país.</p>
-                            </li>
-                            <li className="mb-4">
-                                <h3 className="text-lg font-semibold">Inovação Contínua</h3>
-                                <p>Estamos sempre atualizados com as últimas tendências e tecnologias em oncologia e gestão hospitalar, garantindo que nossos clientes recebam as melhores práticas e soluções inovadoras.</p>
-                            </li>
-                            <li className="mb-4">
-                                <h3 className="text-lg font-semibold">Compromisso com a Excelência</h3>
-                                <p>Nosso compromisso é com a excelência em tudo o que fazemos, buscando constantemente superar as expectativas e oferecer resultados excepcionais para nossos clientes e pacientes.</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="mt-8 my-10">
-                        <h2 className="text-2xl font-bold mb-4">Entre em Contato Conosco</h2>
-                        <p>Se você está buscando melhorar a gestão hospitalar em oncologia e promover melhores resultados para sua instituição, entre em contato conosco hoje mesmo para saber mais sobre nossos serviços e como podemos ajudar. Estamos aqui para apoiá-lo em sua jornada rumo à excelência em cuidados oncológicos.</p>
-                    </div>
-                </div>
-            </section>
-            <Footer />
-        </main>
-    );
+  return (
+    <main className="min-h-screen flex flex-col ">
+      <Header />
+      <section className="min-h-[100vh] w-full bg-[#0E264A] flex items-center justify-center md:justify-start">
+        <div className="container mx-auto">
+          <Image
+            src={require("../../public/logo-proonco.png")}
+            width={50}
+            height={50}
+            alt="Icone Pro Onco"
+            className="mx-auto md:mx-0"
+          />
+          <h1 className="font-bai-jamjuree text-center md:text-start w-full text-6xl">
+            ProOnco
+          </h1>
+          <h2 className="uppercase font-xl text-center md:text-start w-full tracking-[10px] text-sky-500">
+            Excelencia em
+          </h2>
+          <h2 className="font-bai-jamjuree text-center md:text-start md:w-1/2 text-6xl">
+            Gestão Oncologica Hospitalar
+          </h2>
+          <a
+            href="#about"
+            className="flex border-2 w-[90%] md:w-[23%] mx-auto md:mx-1 border-[#23B3E0] bg-gradient-to-br from-sky-200/20 to-sky-500/20 hover:bg-gradient-to-tr hover:from-sky-500/20 hover:to-sky-200/20 mt-20 px-6 py-4 rounded-full justify-between transition-all ease-linear duration-150 hover:drop-shadow-2xl"
+          >
+            <span className="font-bold text-base">Conheça</span>
+            <Image
+              src={require("../../public/logo-proonco.png")}
+              width={20}
+              height={20}
+              alt="Icone Pro Onco"
+              className="w-5 h-5"
+            />
+          </a>
+        </div>
+      </section>
+      <section className="min-h-[100vh]  bg-[#D6E0E7]"></section>
+      <section className="min-h-[100vh]  bg-[#1D4C77]"></section>
+      <section className="min-h-[100vh]  bg-[#D9E1E7]"></section>
+      <section className="min-h-[100vh]  bg-[#0E264A]"></section>
+      <section className="min-h-[100vh]  bg-[#D9E1E7]"></section>
+      <Footer />
+    </main>
+  );
 }
