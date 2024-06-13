@@ -69,6 +69,7 @@ export default function Header() {
             width={150}
             height={20}
             alt="Logo ProOnco"
+            className="md:w-[200px]"
           />
         </a>
         <ul
@@ -89,7 +90,7 @@ export default function Header() {
         <ul
           className={`${
             open
-              ? "bg-red-500 flex opacity-100 w-full h-screen left-0"
+              ? "bg-[#0E264A]/30 backdrop-blur-xl flex opacity-100 w-full h-screen mt-16"
               : "w-full h-0"
           } fixed ${
             scrolled ? "top-16" : "top-20"
@@ -110,7 +111,7 @@ export default function Header() {
                   open
                     ? "inline-block ml-0 pointer-events-auto transition ease-in py-6"
                     : "py-0 opacity-0 ml-6 hidden pointer-events-none"
-                } text-slate-300 border-b-[1px] border-slate-700 w-full focus:text-white focus:font-semibold`}
+                } text-slate-300 font-bai-jamjuree border-b-[1px] border-slate-700 w-full focus:text-white focus:font-semibold`}
                 href={`${item.link}`}
               >
                 {item.nome}
@@ -121,7 +122,10 @@ export default function Header() {
         <ul className="hidden md:flex gap-3">
           {menuItems.map((item, intex) => (
             <li key={item.nome}>
-              <Link className="px-2 py-1" href={item.link}>
+              <Link
+                className="px-2 py-1 text-[#7992C4] font-bai-jamjuree text-lg hover:text-sky-500 hover:font-semibold transition-all ease-in-out duration-150"
+                href={item.link}
+              >
                 {item.nome}
               </Link>
             </li>

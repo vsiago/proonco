@@ -7,7 +7,7 @@ export default function Home() {
     <main className="min-h-screen flex flex-col ">
       <Header />
       <section className="background-section h-[90vh] w-full bg-[#0E264A] flex items-center justify-center">
-        <div className="container mx-auto w-full">
+        <div className="container mx-auto w-full mt-10">
           {/* <Image
             src={require("../../public/logo-proonco.png")}
             width={65}
