@@ -19,3 +19,18 @@
   @apply relative w-full h-96 bg-gradient-to-r from-blue-800 to-blue-400 text-white flex flex-col justify-center items-center text-center;
   clip-path: ellipse(70% 70% at 50% 50%);
 }
+
+.background-section {
+  background-image: url("/bg-oncologia-.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* Padrão para dispositivos móveis */
+}
+
+/* Media query para telas maiores (largura mínima de 768px) */
+@media (min-width: 768px) {
+  .background-section {
+    background-position: 100% center;
+    background-size: contain; /* Muda para contain em desktops */
+  }
+}

@@ -6,22 +6,19 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col ">
       <Header />
-      <section className="min-h-[100vh] w-full bg-[#0E264A] flex items-center justify-center md:justify-start">
+      <section className="background-section h-[90vh] w-full bg-[#0E264A] flex items-center justify-center md:justify-start">
         <div className="container mx-auto">
           <Image
             src={require("../../public/logo-proonco.png")}
-            width={50}
-            height={50}
+            width={65}
+            height={65}
             alt="Icone Pro Onco"
             className="mx-auto md:mx-0"
           />
-          <h1 className="font-bai-jamjuree text-center md:text-start w-full text-6xl">
+          <h1 className="font-bai-jamjuree text-center md:text-start w-full text-6xl font-bold">
             ProOnco
           </h1>
-          <h2 className="uppercase font-xl text-center md:text-start w-full tracking-[10px] text-sky-500">
-            Excelencia em
-          </h2>
-          <h2 className="font-bai-jamjuree text-center md:text-start md:w-1/2 text-6xl">
+          <h2 className="font-bai-jamjuree text-center md:text-start md:w-1/2 text-6xl font-bold">
             Gestão Oncologica Hospitalar
           </h2>
           <a
@@ -39,6 +36,7 @@ export default function Home() {
           </a>
         </div>
       </section>
+
       <section className="min-h-[100vh]  bg-[#D6E0E7]"></section>
       <section className="min-h-[100vh]  bg-[#1D4C77]"></section>
       <section className="min-h-[100vh]  bg-[#D9E1E7]"></section>
