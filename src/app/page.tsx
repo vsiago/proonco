@@ -15,20 +15,20 @@ export default function Home() {
         <SCHero />
       </section>
      
-      <section className="bg-gradient-to-b from-sky-100 to-white py-16 px-4 md:py-24 md:px-8 overflow-hidden">
+      <section id="services" className="bg-gradient-to-b from-sky-100 to-white py-16 px-4 md:py-24 md:px-8 overflow-hidden">
         <SCService />
       </section>
-      <section className="bg-gradient-to-b from-sky-100 to-white py-16 px-4 md:py-24 md:px-8 overflow-hidden">
+      <section id="about" className="bg-gradient-to-b from-sky-100 to-white py-16 px-4 md:py-24 md:px-8 overflow-hidden">
         <SCAbout />
       </section>
-      <section className="bg-gradient-to-b from-sky-100 to-white py-16 px-4 md:py-24 md:px-8 overflow-hidden">
+      <section id="benefits" className="bg-gradient-to-b from-sky-100 to-white py-16 px-4 md:py-24 md:px-8 overflow-hidden">
       <SCBenefits />
         
       </section>
-      <section className="bg-gradient-to-b from-sky-100 to-white py-16 px-4 md:py-24 md:px-8 overflow-hidden">
+      <section id="statics" className="bg-gradient-to-b from-sky-100 to-white py-16 px-4 md:py-24 md:px-8 overflow-hidden">
         <SCStatics />
       </section>
-      <section className="bg-gradient-to-b from-sky-100 to-white py-16 px-4 md:py-24 md:px-8 overflow-hidden">
+      <section id="contact" className="bg-gradient-to-b from-sky-100 to-white py-16 px-4 md:py-24 md:px-8 overflow-hidden">
         <SCOncologyForm />
       </section>
       <section className="bg-gradient-to-b from-sky-100 to-white overflow-hidden">

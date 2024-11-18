@@ -11,11 +11,23 @@ export default function Header() {
 
   const menuItems = [
     { nome: "Início", link: "/" },
-    { nome: "Quem Somos", link: "/quem-somos" },
-    { nome: "Oncologia em Números", link: "/oncologia-em-numeros" },
-    { nome: "Serviços", link: "/servicos" },
-    { nome: "Contatos", link: "/contatos" },
+    { nome: "Serviços", link: "#services" },
+    { nome: "Quem Somos", link: "#about" },
+    { nome: "Benefícios", link: "#benefits" },
+    { nome: "Oncologia em Números", link: "#statics" },
+    { nome: "Contato", link: "#contact" },
   ];
+
+  const handleMenuItemClick = (e) => {
+    // Fechar o menu
+    setOpen(false);
+    
+    // Se a navegação for para um link de âncora, fazemos o scroll suave
+    const target = document.querySelector(e.target.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +36,7 @@ export default function Header() {
 
       setScrolled(isScrolled);
 
-      if (currentScrollPos > 700) {
+      if (currentScrollPos > 600) {
         if (currentScrollPos > prevScrollPos && isVisible) {
           // Scroll para baixo
           setIsVisible(false);
@@ -79,9 +91,9 @@ export default function Header() {
         <ul
           className={`${
             open
-              ? "bg-[#0E264A]/30 backdrop-blur-xl flex opacity-100 w-full h-screen mt-16"
+              ? "bg-[#0E264A]/95 backdrop-blur-3xl flex opacity-100 w-full h-screen mt-16"
               : "w-full h-0"
-          } fixed ${scrolled ? "top-16" : "top-20"} right-0 flex flex-col transition duration-200 ease-out opacity-0 flex-1`}
+          } fixed ${scrolled ? "top-0" : "top-0"} right-0 pr-3 flex flex-col items-end transition duration-200 ease-out opacity-0 flex-1`}
         >
           {menuItems.map((item, index) => (
             <li
@@ -89,8 +101,8 @@ export default function Header() {
               style={{ transitionDelay: `${open ? index * 70 : 0}ms` }}
               className={`px-6 ${
                 open
-                  ? "opacity-100 transform translate-x-0"
-                  : "opacity-0 transform -translate-x-10"
+                  ? "opacity-100 transform  translate-y-0"
+                  : "opacity-0 transform  -translate-y-10"
               } transition-all ease-out duration-500`}
             >
               <a
@@ -98,8 +110,9 @@ export default function Header() {
                   open
                     ? "inline-block ml-0 pointer-events-auto transition ease-in py-6"
                     : "py-0 opacity-0 ml-6 hidden pointer-events-none"
-                } text-slate-300 font-bai-jamjuree border-b-[1px] border-slate-700 w-full focus:text-white focus:font-semibold`}
+                } text-slate-300 font-bai-jamjuree border-b-[1px] border-slate-950/50 pl-20 w-full focus:text-white focus:font-semibold`}
                 href={`${item.link}`}
+                onClick={handleMenuItemClick} // Chama a função ao clicar
               >
                 {item.nome}
               </a>
@@ -107,11 +120,12 @@ export default function Header() {
           ))}
         </ul>
         <ul className="hidden md:flex gap-3">
-          {menuItems.map((item, intex) => (
+          {menuItems.map((item) => (
             <li key={item.nome}>
               <Link
                 className="px-2 py-1 text-white font-bai-jamjuree text-lg hover:text-sky-500 hover:font-semibold transition-all ease-in-out duration-150"
                 href={item.link}
+                onClick={handleMenuItemClick} // Chama a função ao clicar
               >
                 {item.nome}
               </Link>
