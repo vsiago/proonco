@@ -104,7 +104,7 @@ export default function Component() {
         </div>
 
         <div className="flex justify-end mt-8">
-          <ButtonComponent />
+          {/* <ButtonComponent /> */}
         </div>
       </div>
   )
