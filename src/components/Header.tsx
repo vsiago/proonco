@@ -7,28 +7,14 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
 
   const menuItems = [
-    {
-      nome: "Início",
-      link: "/",
-    },
-    {
-      nome: "Quem Somos",
-      link: "/quem-somos",
-    },
-    {
-      nome: "Oncologia em Números",
-      link: "/oncologia-em-numeros",
-    },
-    {
-      nome: "Serviços",
-      link: "/servicos",
-    },
-    {
-      nome: "Contatos",
-      link: "/contatos",
-    },
+    { nome: "Início", link: "/" },
+    { nome: "Quem Somos", link: "/quem-somos" },
+    { nome: "Oncologia em Números", link: "/oncologia-em-numeros" },
+    { nome: "Serviços", link: "/servicos" },
+    { nome: "Contatos", link: "/contatos" },
   ];
 
   useEffect(() => {
@@ -38,31 +24,34 @@ export default function Header() {
 
       setScrolled(isScrolled);
 
-      if (currentScrollPos > prevScrollPos) {
-        // Scrolling down
-        setPrevScrollPos(currentScrollPos);
-        setOpen(false);
-      } else {
-        // Scrolling up
-        setPrevScrollPos(currentScrollPos);
+      if (currentScrollPos > 700) {
+        if (currentScrollPos > prevScrollPos && isVisible) {
+          // Scroll para baixo
+          setIsVisible(false);
+        } else if (currentScrollPos < prevScrollPos && !isVisible) {
+          // Scroll para cima
+          setIsVisible(true);
+        }
       }
+
+      setPrevScrollPos(currentScrollPos);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPos]);
+  }, [prevScrollPos, isVisible]);
 
   return (
     <header
       className={`${
-        scrolled
-          ? "bg-sky-500 fixed top-0 z-10 h-16 flex w-full translate-y-0 duration-300 ease-in-out bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-90"
-          : "h-44 absolute w-full"
-      } `}
+        isVisible
+          ? "border-b border-sky-500/20 fixed top-0 h-16 flex w-full translate-y-0 duration-300 ease-in-out bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-90 z-[2000]"
+          : "-translate-y-16" // Esconde o cabeçalho
+      } ${scrolled && window.pageYOffset > 700 ? "bg-sky-500" : ""}`}
     >
-      <nav className="min-h-full px-6 flex w-full justify-between items-center md:container mx-auto ">
+      <nav className="min-h-full px-6 flex w-full justify-between items-center md:container mx-auto">
         <a href="/">
           <Image
             src="/logo-proonco-clara.png"
@@ -92,9 +81,7 @@ export default function Header() {
             open
               ? "bg-[#0E264A]/30 backdrop-blur-xl flex opacity-100 w-full h-screen mt-16"
               : "w-full h-0"
-          } fixed ${
-            scrolled ? "top-16" : "top-20"
-          } right-0 flex flex-col transition duration-200 ease-out opacity-0 flex-1`}
+          } fixed ${scrolled ? "top-16" : "top-20"} right-0 flex flex-col transition duration-200 ease-out opacity-0 flex-1`}
         >
           {menuItems.map((item, index) => (
             <li
@@ -102,7 +89,7 @@ export default function Header() {
               style={{ transitionDelay: `${open ? index * 70 : 0}ms` }}
               className={`px-6 ${
                 open
-                  ? "opacity-100 transform translate-x-0 "
+                  ? "opacity-100 transform translate-x-0"
                   : "opacity-0 transform -translate-x-10"
               } transition-all ease-out duration-500`}
             >
@@ -123,7 +110,7 @@ export default function Header() {
           {menuItems.map((item, intex) => (
             <li key={item.nome}>
               <Link
-                className="px-2 py-1 text-[#7992C4] font-bai-jamjuree text-lg hover:text-sky-500 hover:font-semibold transition-all ease-in-out duration-150"
+                className="px-2 py-1 text-white font-bai-jamjuree text-lg hover:text-sky-500 hover:font-semibold transition-all ease-in-out duration-150"
                 href={item.link}
               >
                 {item.nome}
