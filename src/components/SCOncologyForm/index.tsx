@@ -47,9 +47,9 @@ export default function Component() {
 
               {/* Right Column - Form */}
               <div className="relative">
-                <div className="rounded-[1.5rem] border border-sky-200/50 bg-white/70 backdrop-blur-sm p-8 shadow-[0_0_2rem_-0.5rem_rgba(14,165,233,0.1)]">
+                <div className="rounded-[1.5rem] border-sky-200/50 bg-white/70 backdrop-blur-sm p-8 shadow-[0_0_2rem_-0.5rem_rgba(14,165,233,0.1)] border-2 border-sky-500">
                   <h2 className="mb-8 text-2xl font-semibold text-slate-800">Quero ser cliente</h2>
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6 ">
                     <div className="space-y-4">
                       <div className="space-y-2">
                         <Label htmlFor="nome" className="text-slate-600">

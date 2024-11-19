@@ -64,7 +64,7 @@ export default function Header() {
       } ${scrolled && window.pageYOffset > 700 ? "bg-sky-500" : ""}`}
     >
       <nav className="min-h-full px-6 flex w-full justify-between items-center md:container mx-auto">
-        <a href="/">
+        <Link href="/">
           <Image
             src="/logo-proonco-clara.png"
             width={150}
@@ -72,7 +72,7 @@ export default function Header() {
             alt="Logo ProOnco"
             className="md:w-[200px]"
           />
-        </a>
+        </Link>
         <ul
           onClick={() => setOpen(!open)}
           className="md:hidden relative flex h-10 w-10 flex-col items-center justify-center gap-3 cursor-pointer hover:bg-slate-700 rounded transition duration-150 ease-in hover:transform hover:scale-105"
@@ -105,7 +105,7 @@ export default function Header() {
                   : "opacity-0 transform  -translate-y-10"
               } transition-all ease-out duration-500`}
             >
-              <a
+              <Link
                 className={`${
                   open
                     ? "inline-block ml-0 pointer-events-auto transition ease-in py-6"
@@ -115,7 +115,7 @@ export default function Header() {
                 onClick={handleMenuItemClick} // Chama a função ao clicar
               >
                 {item.nome}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

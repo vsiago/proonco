@@ -4,10 +4,12 @@ import { cn } from '@/lib/utils'
 
 export default function Footer() {
   const navLinks = [
-    { name: 'Quem somos', href: '#' },
-    { name: 'Oncologia em números', href: '#' },
-    { name: 'Serviços', href: '#' },
-    { name: 'Contato', href: '#' }
+    { name: "Início", href: "/" },
+    { name: "Serviços", href: "#services" },
+    { name: "Quem Somos", href: "#about" },
+    { name: "Benefícios", href: "#benefits" },
+    { name: "Oncologia em Números", href: "#statics" },
+    { name: "Contato", href: "#contact" },
   ]
 
   const contactLinks = [
@@ -18,7 +20,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="relative mt-20 overflow-hidden rounded-t-[2.5rem] bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 px-6 pt-16 text-white md:px-8">
+    <footer className="relative  overflow-hidden  bg-gradient-to-br from-[#0E264A]  to-[#0F4F82] px-6 pt-16 text-white md:px-8">
       <div className="container mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-[1fr,auto]">
           {/* Logo and Navigation */}

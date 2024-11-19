@@ -11,11 +11,10 @@ export default function Component() {
 
   return (
     <section className="container max-w-7xl py-8 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative bg-slate-800 rounded-3xl p-6 md:p-8 overflow-hidden">
-          {/* Glowing border effect */}
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-sky-400/20 to-sky-500/20 blur-xl" />
-          <div className="absolute inset-[2px] rounded-3xl bg-slate-800" />
+      <div className="max-w-7xl mx-auto bg-gradient-to-r from-[#637590] to-[#41526B] rounded-[2rem] border-2 border-sky-500">
+        <div className="relative   rounded-3xl p-6 md:p-8 overflow-hidden">
+          <div className="absolute inset-0 rounded-3xl   blur-xl" />
+          <div className="absolute inset-[2px] rounded-3xl " />
           
           {/* Content */}
           <div className="relative">

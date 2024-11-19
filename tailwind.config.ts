@@ -24,6 +24,9 @@ const config = {
       },
     },
     extend: {
+      boxShadow: {
+        'custom-blue': '0 6px 20px rgba(59, 130, 246, 0.7)', // Exemplo de azul
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
