@@ -1,10 +1,8 @@
 import Image from "next/image";
-import ParticlesComponent from '@/components/particles';
 
 export default function Hero() {
   return (
     <div className="container mx-auto w-full mt-10">
-            <ParticlesComponent id="particles" />
 
           {/* <Image
             src={require("../../public/logo-proonco.png")}
@@ -18,7 +16,7 @@ export default function Hero() {
           </h1>
           <a
             href="#services"
-            className="flex border-2 w-[90%] md:w-[23%] mx-auto items-center z-[2000]  border-[#23B3E0] bg-gradient-to-br from-sky-200/20 to-sky-500/20 hover:bg-white active:bg-white focus:bg-white hover:border-white mt-20 px-6 py-4 rounded-full justify-between transition-all ease-linear duration-150 hover:drop-shadow-2xl"
+            className="flex border-2 w-[90%] md:w-[23%] mx-auto items-center hover:text-slate-600 z-[2000] border-[#23B3E0] bg-gradient-to-br from-sky-200/20 to-sky-500/20 hover:bg-white active:bg-white focus:bg-white hover:border-white mt-20 px-6 py-4 rounded-full justify-between transition-all ease-linear duration-150 hover:drop-shadow-2xl"
           >
             <span className="font-bold text-base">Conheça</span>
             <Image
