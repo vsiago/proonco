@@ -12,7 +12,7 @@ export default function Home() {
     <main className="">
       <Header />
       <section className=" relative overflow-hidden -z-10 h-[93vh] md:h-screen w-full bg-[#0E264A] flex items-center justify-center">
-        <div className='background-section h-full w-full absolute z-20 opacity-30'>
+        <div className='background-section h-full w-full fixed z-20 opacity-30'>
 
         </div>
         <SCHero />
