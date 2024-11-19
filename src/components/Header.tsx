@@ -1,7 +1,7 @@
-"use client";
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
+'use client';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -10,22 +10,22 @@ export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
 
   const menuItems = [
-    { nome: "Início", link: "/" },
-    { nome: "Serviços", link: "#services" },
-    { nome: "Quem Somos", link: "#about" },
-    { nome: "Benefícios", link: "#benefits" },
-    { nome: "Oncologia em Números", link: "#statics" },
-    { nome: "Contato", link: "#contact" },
+    { nome: 'Início', link: '/' },
+    { nome: 'Serviços', link: '#services' },
+    { nome: 'Quem Somos', link: '#about' },
+    { nome: 'Benefícios', link: '#benefits' },
+    { nome: 'Oncologia em Números', link: '#statics' },
+    { nome: 'Contato', link: '#contact' },
   ];
 
   const handleMenuItemClick = (e: any) => {
     // Fechar o menu
     setOpen(false);
-    
+
     // Se a navegação for para um link de âncora, fazemos o scroll suave
-    const target = document.querySelector(e.target.getAttribute("href"));
+    const target = document.querySelector(e.target.getAttribute('href'));
     if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+      target.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -49,9 +49,9 @@ export default function Header() {
       setPrevScrollPos(currentScrollPos);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [prevScrollPos, isVisible]);
 
@@ -59,9 +59,11 @@ export default function Header() {
     <header
       className={`${
         isVisible
-          ? "border-b border-sky-500/20 fixed top-0 h-16 flex w-full translate-y-0 duration-300 ease-in-out bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-90 z-[2000]"
-          : "-translate-y-16" // Esconde o cabeçalho
-      } ${scrolled && window.pageYOffset > 700 ? "bg-sky-500" : ""}`}
+          ? ` fixed top-0 w-full translate-y-0 duration-300 ease-in-out bg-clip-padding  bg-opacity-90 z-[2000] ${
+              scrolled ? 'h-16 backdrop-filter backdrop-blur-lg border-b border-sky-500/20' : 'h-20 md:h-28 border-sky-500/50'
+            }`
+          : '-translate-y-16' // Esconde o cabeçalho
+      } ${scrolled && window.pageYOffset > 700 ? 'bg-sky-500' : ''}`}
     >
       <nav className="min-h-full px-6 flex w-full justify-between items-center md:container mx-auto">
         <Link href="/">
@@ -75,25 +77,27 @@ export default function Header() {
         </Link>
         <ul
           onClick={() => setOpen(!open)}
-          className="md:hidden relative flex h-10 w-10 flex-col items-center justify-center gap-3 cursor-pointer hover:bg-slate-700 rounded transition duration-150 ease-in hover:transform hover:scale-105"
+          className="md:hidden relative flex h-10 w-10 flex-col items-center justify-center gap-3 cursor-pointer  rounded transition duration-150 ease-in hover:transform hover:scale-105"
         >
           <li
             className={`${
-              open ? "transform rotate-45 absolute" : ""
+              open ? 'transform rotate-45 absolute' : ''
             } w-7 h-[3px] rounded-[2px] bg-white transition duration-150 ease-in-out`}
           ></li>
           <li
             className={`${
-              open ? "transform -rotate-45 absolute" : ""
+              open ? 'transform -rotate-45 absolute' : ''
             } w-7 h-[3px] rounded-[2px] bg-white transition duration ease-in-out`}
           ></li>
         </ul>
         <ul
           className={`${
             open
-              ? "bg-[#0E264A]/95 backdrop-blur-3xl flex opacity-100 w-full h-screen mt-16"
-              : "w-full h-0"
-          } fixed ${scrolled ? "top-0" : "top-0"} right-0 pr-3 flex flex-col items-end transition duration-200 ease-out opacity-0 flex-1`}
+              ? `bg-[#0E264A]/95 backdrop-blur-3xl flex opacity-100 w-full h-screen ${
+                  scrolled ? 'mt-16' : 'mt-20'
+                }`
+              : 'w-full h-0'
+          } fixed top-0 right-0 pr-3 flex flex-col items-end transition duration-200 ease-out opacity-0 flex-1`}
         >
           {menuItems.map((item, index) => (
             <li
@@ -101,15 +105,15 @@ export default function Header() {
               style={{ transitionDelay: `${open ? index * 70 : 0}ms` }}
               className={`px-6 ${
                 open
-                  ? "opacity-100 transform  translate-y-0"
-                  : "opacity-0 transform  -translate-y-10"
+                  ? 'opacity-100 transform  translate-y-0'
+                  : 'opacity-0 transform  -translate-y-10'
               } transition-all ease-out duration-500`}
             >
               <Link
                 className={`${
                   open
-                    ? "inline-block ml-0 pointer-events-auto transition ease-in py-6"
-                    : "py-0 opacity-0 ml-6 hidden pointer-events-none"
+                    ? 'inline-block ml-0 pointer-events-auto transition ease-in py-6'
+                    : 'py-0 opacity-0 ml-6 hidden pointer-events-none'
                 } text-slate-300 font-bai-jamjuree border-b-[1px] border-slate-950/50 pl-20 w-full focus:text-white focus:font-semibold`}
                 href={`${item.link}`}
                 onClick={handleMenuItemClick} // Chama a função ao clicar
