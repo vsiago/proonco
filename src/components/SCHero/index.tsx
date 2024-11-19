@@ -1,8 +1,11 @@
 import Image from "next/image";
+import ParticlesComponent from '@/components/particles';
 
 export default function Hero() {
   return (
-    <div className="container mx-auto w-full mt-10 ">
+    <div className="container mx-auto w-full mt-10">
+            <ParticlesComponent id="particles" />
+
           {/* <Image
             src={require("../../public/logo-proonco.png")}
             width={65}

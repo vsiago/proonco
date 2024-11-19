@@ -69,3 +69,13 @@ html {
     height: 100px;
   }
 }
+
+#particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5; /* Particles no plano de fundo */
+  opacity: 0.5;
+}

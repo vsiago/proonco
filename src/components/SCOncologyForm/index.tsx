@@ -52,11 +52,11 @@ export default function Component() {
                   <form onSubmit={handleSubmit} className="space-y-6 ">
                     <div className="space-y-4">
                       <div className="space-y-2">
-                        <Label htmlFor="nome" className="text-slate-600">
+                        <Label htmlFor="nome" className="text-slate-500">
                           Nome
                         </Label>
                         <div className="relative">
-                          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">
                             <User className="h-5 w-5" />
                           </div>
                           <Input
@@ -64,10 +64,10 @@ export default function Component() {
                             placeholder="Digite seu nome"
                             className={cn(
                               'h-12 rounded-xl pl-10 transition-all duration-200',
-                              'bg-slate-50/50 border-slate-200/50',
-                              'placeholder:text-slate-400',
+                              'bg-slate-200 border-slate-200/50',
+                              'placeholder:text-slate-500 text-slate-600',
                               'hover:border-sky-200 hover:bg-white',
-                              'focus:border-sky-500/50 focus:bg-white focus:ring-2 focus:ring-sky-500/20',
+                              'focus:border-sky-500/50 focus:bg-white focus:ring-2 focus:ring-sky-500',
                             )}
                             value={formData.nome}
                             onChange={e => setFormData({ ...formData, nome: e.target.value })}
@@ -76,11 +76,11 @@ export default function Component() {
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="sobrenome" className="text-slate-600">
+                        <Label htmlFor="sobrenome" className="text-slate-500">
                           Sobrenome
                         </Label>
                         <div className="relative">
-                          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">
                             <Users className="h-5 w-5" />
                           </div>
                           <Input
@@ -88,8 +88,8 @@ export default function Component() {
                             placeholder="Digite seu sobrenome"
                             className={cn(
                               'h-12 rounded-xl pl-10 transition-all duration-200',
-                              'bg-slate-50/50 border-slate-200/50',
-                              'placeholder:text-slate-400',
+                              'bg-slate-200 border-slate-200/50',
+                              'placeholder:text-slate-500 text-slate-600',
                               'hover:border-sky-200 hover:bg-white',
                               'focus:border-sky-500/50 focus:bg-white focus:ring-2 focus:ring-sky-500/20',
                             )}
@@ -100,11 +100,11 @@ export default function Component() {
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="telefone" className="text-slate-600">
+                        <Label htmlFor="telefone" className="text-slate-500">
                           WhatsApp / Telefone
                         </Label>
                         <div className="relative">
-                          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">
                             <Phone className="h-5 w-5" />
                           </div>
                           <Input
@@ -112,9 +112,9 @@ export default function Component() {
                             type="tel"
                             placeholder="(00) 00000-0000"
                             className={cn(
-                              'h-12 rounded-xl pl-10 transition-all duration-200',
-                              'bg-slate-50/50 border-slate-200/50',
-                              'placeholder:text-slate-400',
+                              'h-14 rounded-xl pl-10 transition-all duration-200',
+                              'bg-slate-200 border-slate-200/50',
+                              'placeholder:text-slate-500 text-slate-600',
                               'hover:border-sky-200 hover:bg-white',
                               'focus:border-sky-500/50 focus:bg-white focus:ring-2 focus:ring-sky-500/20',
                             )}
