@@ -18,7 +18,7 @@ export default function Header() {
     { nome: "Contato", link: "#contact" },
   ];
 
-  const handleMenuItemClick = (e) => {
+  const handleMenuItemClick = (e: any) => {
     // Fechar o menu
     setOpen(false);
     
