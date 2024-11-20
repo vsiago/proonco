@@ -83,3 +83,25 @@ html {
   z-index: -2; /* Particles no plano de fundo */
   opacity: 0.8;
 }
+
+/* Animação para o slide-in-bottom */
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Aplicando a animação */
+.slide-in-bottom {
+  animation: slide-in-bottom 1s ease-out;
+}
+
+/* Classe para esconder o componente inicialmente */
+.hidden-bottom {
+  opacity: 0;
+}

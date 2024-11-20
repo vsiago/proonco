@@ -114,7 +114,7 @@ export default function Header() {
                   open
                     ? 'inline-block ml-0 pointer-events-auto transition ease-in py-6'
                     : 'py-0 opacity-0 ml-6 hidden pointer-events-none'
-                } text-slate-300 font-bai-jamjuree border-b-[1px] border-slate-950/50 pl-20 w-full focus:text-white focus:font-semibold`}
+                } text-slate-300 font-bai-jamjuree border-b-[1px] border-slate-950/50 pl-20 focus:text-white focus:font-semibold`}
                 href={`${item.link}`}
                 onClick={handleMenuItemClick} // Chama a função ao clicar
               >
