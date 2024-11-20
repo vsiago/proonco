@@ -114,7 +114,7 @@ export default function Header() {
                   open
                     ? 'inline-block ml-0 pointer-events-auto transition ease-in py-6'
                     : 'py-0 opacity-0 ml-6 hidden pointer-events-none'
-                } text-slate-300 font-bai-jamjuree border-b-[1px] border-slate-950/50 pl-20 focus:text-white focus:font-semibold`}
+                } text-slate-400 text-lg hover:text-sky-500 hover:font-semibold font-bai-jamjuree border-b-[1px] border-slate-950/50 pl-20 focus:text-white focus:font-semibold`}
                 href={`${item.link}`}
                 onClick={handleMenuItemClick} // Chama a função ao clicar
               >
@@ -127,7 +127,7 @@ export default function Header() {
           {menuItems.map((item) => (
             <li key={item.nome}>
               <Link
-                className="px-2 py-1 text-white font-bai-jamjuree text-lg hover:text-sky-500 hover:font-semibold transition-all ease-in-out duration-150"
+                className="px-2 py-1 text-slate-400 font-bai-jamjuree text-lg hover:text-sky-500 hover:font-semibold transition-all ease-in-out duration-150"
                 href={item.link}
                 onClick={handleMenuItemClick} // Chama a função ao clicar
               >

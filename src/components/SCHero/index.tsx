@@ -44,8 +44,8 @@ export default function Hero() {
       {/* Texto que aparece com delay */}
       <div
         className={`${
-          showText ? "slide-in-bottom text-white" : "hidden-bottom"
-        } text-center mt-5 text-xl md:text-3xl font-semibold text-gray-800`}
+          showText ? "slide-in-bottom text-slate-300" : "hidden-bottom"
+        } text-center mt-5 text-xl md:text-3xl font-semibold`}
       >
         Soluções de gestão para hospitais e clínicas oncológicas.
       </div>
